@@ -1,7 +1,19 @@
 print("Бондурянський Кирило Юрійович \nЛабораторна робота №1 \nВаріант 1 \nДруге завдання \nЗнайдення відповідного значення функції залежно від введеного числа")
-x = float(input("Введіть перше число: "))
-y = float(input("Введіть друге число: "))
-z = float(input("Введіть третє число: "))
+def is_num(symbol1, symbol2, symbol3):
+    if re.search(r'^\-?\d+\.?\d+$', symbol1):
+        return True
+    if re.search(r'^\-?\d+\.?\d+$', symbol2):
+        return True
+    if re.search(r'^\-?\d+\.?\d+$', symbol3):
+        return True
+x = input("Введіть перше число: ")
+y = input("Введіть друге число: ")
+z = input("Введіть третє число: ")
+while not is_num(x, y, z):
+    x = input("Введіть перше число: ")
+    y = input("Введіть друге число: ")
+    z = input("Введіть третє число: ")
+x, y, z = float(x), float(y), float(z)
 if x >= 0:
     print("Перше число більше або рівне 0, тому маємо " + str(x**2))
 else: print("Перше число менше за 0, тому маємо " + str(x**4))

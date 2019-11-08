@@ -1,6 +1,6 @@
 print("Бондурянський Кирило Юрійович \nЛабораторна робота №1 \nВаріант 1 \nПерше завдання \nПереведення кута з радіанної міри в градусну")
 def is_num(symbol):
-    if re.search(r'^\d+$', symbol):
+    if re.search(r'^\-?\d+\.?\d+$', symbol):
         return True
 angle = input("Введіть кут радіанної міри: ")
 while not is_num(angle):
